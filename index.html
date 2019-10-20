@@ -103,13 +103,13 @@
 
 <h6 id="因为node-js搭建的后台都是异步请求，所以在调取数据库的数据时，需要用callback回调函数进行回调。-1"><a href="#因为node-js搭建的后台都是异步请求，所以在调取数据库的数据时，需要用callback回调函数进行回调。-1" class="headerlink" title="因为node.js搭建的后台都是异步请求，所以在调取数据库的数据时，需要用callback回调函数进行回调。"></a>因为node.js搭建的后台都是异步请求，所以在调取数据库的数据时，需要用callback回调函数进行回调。</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function updateUser(uid, params, callback) &#123;</span><br><span class="line">    let sql = &apos;UPDATE user SET &apos;;</span><br><span class="line">    let data = []</span><br><span class="line">    let isFirst = true</span><br><span class="line">    for (const key in params) &#123;</span><br><span class="line">        if (isFirst) &#123;</span><br><span class="line">            sql += ` $&#123;key&#125; = ? `</span><br><span class="line">            isFirst = false</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            sql += `, $&#123;key&#125; = ?`</span><br><span class="line">        &#125;</span><br><span class="line">        data.push(params[key])</span><br><span class="line">    &#125;</span><br><span class="line">    sql += ` WHERE uid = ? `</span><br><span class="line">    console.log(sql)</span><br><span class="line">    data.push(uid)</span><br><span class="line">    connection.query(sql, data, function (err, result) &#123;</span><br><span class="line">        if (err) &#123;</span><br><span class="line">            callback(err)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            callback(null, result.affectedRows === 1)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function quit(params) &#123;</span><br><span class="line">    connection.end()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">module.exports.getUser = getUser</span><br><span class="line">module.exports.updateUser = updateUser</span><br><span class="line">module.exports.quit = quit</span><br></pre></td></tr></table></figure>
 
-<h6 id="通过以上学习解决了Facebook私信中遇到域名被封无法发送的问题"><a href="#通过以上学习解决了Facebook私信中遇到域名被封无法发送的问题" class="headerlink" title="通过以上学习解决了Facebook私信中遇到域名被封无法发送的问题"></a>通过以上学习解决了Facebook私信中遇到域名被封无法发送的问题</h6><h5 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h5><p>1.数据库视频传输与下载的问题处理。</p>
+<h5 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h5><p>1.数据库视频传输与下载的问题处理。</p>
 <p>2.语法需要更多练习。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/20/工作总结（10-1-10-13）/" data-id="ck1zae2c30004xot5tn5gkv7t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/20/工作总结（10-1-10-13）/" data-id="ck1zaqulh00006ot591didn8s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
@@ -159,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/20/工作总结（10-14-10-20）/" data-id="ck1zae2br0000xot5ngvd116d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/20/工作总结（10-14-10-20）/" data-id="ck1zaquln00016ot5u8d6m3gq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
@@ -220,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/01/hello-world/" data-id="ck1zae2by0001xot51r29gt50" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/01/hello-world/" data-id="ck1zaquml00086ot5quuno4qk" class="article-share-link">Share</a>
       
       
     </footer>
